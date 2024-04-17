@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, Logger } from '@nestjs/common';
 import { HttpService } from '@nestjs/axios';
 import { take } from 'rxjs';
 
@@ -8,7 +8,7 @@ export class AppService {
 
   async gertAircraftInfo(): Promise<any> {
     return new Promise(async (resolve, reject) => {
-      console.log(this.address);
+      this.logger.log(`client ip: ${this.address}`);
       this.httpService
         .get(
           `http://${this.address}/skyaware/data/aircraft.json?_=${new Date().getTime()}`,
@@ -16,7 +16,7 @@ export class AppService {
         .pipe(take(1))
         .subscribe(
           (res: any) => {
-            console.log(res.data)
+            console.log(res.data);
             resolve(res.data);
           },
           (err) => {
@@ -27,4 +27,6 @@ export class AppService {
   }
 
   private address = process.env.SENSOR_ADDRESS;
+
+  private readonly logger = new Logger(AppService.name);
 }
