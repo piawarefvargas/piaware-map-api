@@ -11,6 +11,6 @@ async function bootstrap() {
   app.use(urlencoded({ extended: true, limit: '12mb' }));
   const PORT = process.env.PORT || 9070;
   await app.listen(PORT);
-  console.log(`Application V3 is running on: ${await app.getUrl()}/api`);
+  console.log(`Application V4.0 is running on: ${await app.getUrl()}/api`);
 }
 bootstrap();
