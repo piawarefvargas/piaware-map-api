@@ -1,5 +1,5 @@
 services:
-  piaware-zerotier-nest-api:
+  piaware_zerotier_nest_api:
     github:
       image: docker.pkg.github.com/tu_usuario/tu_repositorio/nombre_de_la_imagen:tag
     dockerOptions:
