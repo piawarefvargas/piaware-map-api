@@ -9,7 +9,7 @@ async function bootstrap() {
   app.setGlobalPrefix('api');
   app.use(json({ limit: '12mb' }));
   app.use(urlencoded({ extended: true, limit: '12mb' }));
-  const PORT = process.env.PORT || 5000;
+  const PORT = process.env.PORT || 9070;
   await app.listen(PORT);
   console.log(`Application is running on: ${await app.getUrl()}/api`);
 }
