@@ -1,0 +1,8 @@
+services:
+  piaware-zerotier-nest-api:
+    github:
+      image: docker.pkg.github.com/tu_usuario/tu_repositorio/nombre_de_la_imagen:tag
+    dockerOptions:
+      - "--rm"
+      - "--cap-add=NET_ADMIN"
+      - "--device=/dev/net/tun"
