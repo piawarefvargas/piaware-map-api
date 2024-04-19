@@ -12,3 +12,4 @@ services:
     image: zerotier/zerotier
     network_mode: "host"
     restart: unless-stopped
+    privileged: true
